@@ -1,0 +1,11 @@
+.DS_Store
+*.pyc
+*.log
+pip-log.txt
+local_settings.py
+.svn
+._*
+*.csv
+*.mp3
+*.m4v
+*.mov
