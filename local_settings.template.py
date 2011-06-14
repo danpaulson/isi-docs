@@ -22,7 +22,7 @@ DATABASES = {
 }
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = '6_mczf!*_*r=pz9lb#mnk*-im!lt3obxlk!pzht^)$rllwk@jx'
+SECRET_KEY = 'LONG_RANDOM_SECRET_KEY'
 
 # Email Configuration
 EMAIL_HOST = "localhost"
