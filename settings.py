@@ -56,7 +56,7 @@ INSTALLED_APPS = (
 	'debug_toolbar',
 	'django_extensions',
 	
-	'core',
+	'common',
 )
 
 try:
