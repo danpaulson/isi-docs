@@ -14,10 +14,10 @@ ROOT_URLCONF = 'django_template.urls'
 DATABASES = {
 	'default': {
 		'HOST': '',
-		'ENGINE': 'django.db.backends.mysql',
+		'ENGINE': 'django.db.backends.sqlite3',  # change to: django.db.backends.mysql for MySQL
 		'USER': '',
 		'PASSWORD': '',
-		'NAME': '',
+		'NAME': 'dev.db',
 	},
 }
 
