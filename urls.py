@@ -20,4 +20,7 @@ urlpatterns = patterns('',
 	(r'^template$', direct_to_template,
 		{ 	'template': '_template.html', 
 			'mimetype': 'text/html' }),
+	(r'^$', direct_to_template,
+		{ 	'template': 'index.html', 
+			'mimetype': 'text/html' }),
 )
