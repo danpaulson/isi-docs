@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Log In{% endblock %}
+
+{% block extra_js %}
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#id_username").focus();
+	});
+</script>
+{% endblock %}
+
+{% block main %}
+<h2>Log In</h2>
+{% if form.errors %}
+<p>Your username and password didn't match. Please try again.</p>
+{% endif %}
+
+<form action="" method="post">
+	{% csrf_token %}
+	{{ form.as_p }}
+
+	<input type="hidden" name="next" value="{{ next }}" />
+	<p><input type="submit" name="submit" value="Login" id="login_btn" /></p>
+</form>
+
+{% endblock %}

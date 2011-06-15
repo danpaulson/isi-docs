@@ -8,7 +8,6 @@ MEDIA_URL = '/files/'
 
 ADMIN_MEDIA_PREFIX = '/files/admin/'
 
-# format: {current directory name}.urls
 ROOT_URLCONF = 'django_template.urls'
 
 DATABASES = {

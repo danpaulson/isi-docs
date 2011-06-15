@@ -42,6 +42,8 @@ TEMPLATE_DIRS = (
 	PROJECT_ROOT + '/templates',
 )
 
+AUTH_PROFILE_MODULE = 'userprofile.UserProfile'
+
 INSTALLED_APPS = (
 	'django.contrib.auth',
 	'django.contrib.contenttypes',
@@ -53,8 +55,10 @@ INSTALLED_APPS = (
 	'south',
 	'debug_toolbar',
 	'django_extensions',
+	'reversion',
 	
 	'common',
+	'userprofile',
 )
 
 try:
