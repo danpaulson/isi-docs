@@ -38,8 +38,6 @@ MIDDLEWARE_CLASSES = (
 	'debug_toolbar.middleware.DebugToolbarMiddleware',
 )
 
-ROOT_URLCONF = 'django_template.urls'
-
 TEMPLATE_DIRS = (
 	PROJECT_ROOT + '/templates',
 )
