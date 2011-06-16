@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Update User Profile{% endblock %}
+
+{% block extra_css %}
+<style>
+</style>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+	$().ready(function() {
+	
+	});
+</script>
+{% endblock %}
+
+{% block header %}
+	<h2>User Profile</h2>
+{% endblock %}
+
+{% block main %}
+	<h3>Update User Profile</h3>
+	<form name="update_user_profile" action="{% url update_user_profile user.pk %}" method="POST">
+		{{ form.as_p }}
+		<input type="submit" />
+	</form>
+{% endblock %}
