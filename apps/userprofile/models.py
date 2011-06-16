@@ -17,6 +17,11 @@ class UserProfile(BaseModel):
 		return '%s' % self.user
 		
 def create_userprofile(sender, instance, created, **kwargs):
-	if created:
-		UserProfile.objects.create(user=instance)
+	try:
+		UserProfile.objects.get(user=instance)
+	except:
+		try:
+			UserProfile.objects.create(user=instance)
+		except:
+			pass
 post_save.connect(create_userprofile, sender=User)

@@ -20,8 +20,9 @@ def update_user_profile(request, user_id):
 	user = get_object_or_404(User, pk=user_id)
 
 	if request.user == user or request.user.is_superuser:
-		userprofile = UserProfile.objects.get(user=user)
-	
+		up = UserProfile.objects.get_or_create(user=user, defaults={ 'user' : user })
+		userprofile = up[0]
+		
 		if request.method == 'POST':
 			f = UserProfileForm(request.POST, instance=userprofile)
 			if f.is_valid():
