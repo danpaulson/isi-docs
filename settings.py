@@ -31,10 +31,14 @@ TEMPLATE_LOADERS = (
 )
 
 MIDDLEWARE_CLASSES = (
+	# django middleware
 	'django.middleware.common.CommonMiddleware',
 	'django.contrib.sessions.middleware.SessionMiddleware',
 	'django.contrib.auth.middleware.AuthenticationMiddleware',
+	'django.middleware.transaction.TransactionMiddleware',
 	
+	# third party middleware
+	'reversion.middleware.RevisionMiddleware',
 	'debug_toolbar.middleware.DebugToolbarMiddleware',
 )
 
@@ -45,6 +49,7 @@ TEMPLATE_DIRS = (
 AUTH_PROFILE_MODULE = 'userprofile.UserProfile'
 
 INSTALLED_APPS = (
+	# django apps
 	'django.contrib.auth',
 	'django.contrib.contenttypes',
 	'django.contrib.sessions',
@@ -52,11 +57,13 @@ INSTALLED_APPS = (
 	'django.contrib.admin',
 	'django.contrib.messages',
 	
+	# third party apps
 	'south',
 	'debug_toolbar',
 	'django_extensions',
 	'reversion',
 	
+	# local project apps
 	'common',
 	'userprofile',
 )
