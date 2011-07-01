@@ -62,7 +62,7 @@ INSTALLED_APPS = (
 	'debug_toolbar',
 	'django_extensions',
 	'reversion',
-	'django-bcrypt',
+	'django_bcrypt',
 	
 	# local project apps
 	'common',
