@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}All documents{% endblock %}
+
+{% block extra_css %}{% endblock %}
+
+{% block extra_js %}{% endblock %}
+
+{% block header %}
+	<h2>All documents</h2>
+{% endblock %}
+
+{% block main %}
+	<table>
+		<tr>
+			<th>Document Name</th>
+			<th>Filename</th>
+			<th>Created By</th>
+			<th>Last Updated By</th>
+			<th>Modified On</th>
+			<th>Edit</th>
+		</tr>
+	{% for d in documents %}
+		<tr>
+			<td>{{d.title}}</td>
+			<td><a href="#">{{d.filename}}</a></td>
+			<td>{{d.creator}}</td>
+			<td>{{d.last_edited_by}}</td>
+			<td>{{d.last_modified}}</td>
+			<td><a href="{% url doc_edit %}{{d.id}}">Edit</a></td>
+		</tr>
+	{% endfor %}
+	</table>
+{% endblock %}

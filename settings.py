@@ -36,10 +36,15 @@ MIDDLEWARE_CLASSES = (
 	'django.contrib.sessions.middleware.SessionMiddleware',
 	'django.contrib.auth.middleware.AuthenticationMiddleware',
 	'django.middleware.transaction.TransactionMiddleware',
-	
-	# third party middleware
-	'reversion.middleware.RevisionMiddleware',
-	'debug_toolbar.middleware.DebugToolbarMiddleware',
+)
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    "django.core.context_processors.auth",
+    "django.core.context_processors.debug",
+    "django.core.context_processors.i18n",
+    "django.core.context_processors.media",
+    "django.core.context_processors.request",
+    "django.contrib.messages.context_processors.messages",
 )
 
 TEMPLATE_DIRS = (
@@ -57,16 +62,10 @@ INSTALLED_APPS = (
 	'django.contrib.admin',
 	'django.contrib.messages',
 	
-	# third party apps
-	'south',
-	'debug_toolbar',
-	'django_extensions',
-	'reversion',
-	'django_bcrypt',
-	
 	# local project apps
 	'common',
 	'userprofile',
+	'docmanager',
 )
 
 try:
