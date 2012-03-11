@@ -1,16 +1,21 @@
 from django.template import RequestContext
-from django.http import HttpResponseForbidden, HttpResponseRedirect
+from django.http import HttpResponseForbidden, HttpResponseRedirect, HttpResponse
 from django.shortcuts import render_to_response, get_object_or_404
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.contrib import messages
 from django.contrib.auth.models import User
+from django.utils.encoding import smart_str
 import os
 
 from userprofile.models import UserProfile
 from userprofile.forms import UserProfileForm
 from docmanager.forms import DocumentForm
 from docmanager.models import Document
+
+def serve(request, doc_id=None):
+	doc = Document.objects.get(pk=doc_id)
+	return HttpResponseRedirect('/%s' % doc.filename())
 
 @login_required
 def list(request):

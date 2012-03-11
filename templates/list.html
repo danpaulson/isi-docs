@@ -23,7 +23,7 @@
 	{% for d in documents %}
 		<tr>
 			<td>{{d.title}}</td>
-			<td><a href="#">{{d.filename}}</a></td>
+			<td><a href="/d/{{d.id}}">{{d.filename}}</a></td>
 			<td>{{d.creator}}</td>
 			<td>{{d.last_edited_by}}</td>
 			<td>{{d.last_modified}}</td>

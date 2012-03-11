@@ -10,6 +10,7 @@ urlpatterns = patterns('',
 	(r'^files/(?P<path>.*)$', 'django.views.static.serve', { 'document_root': settings.MEDIA_ROOT } ),
 
 	url(r'^a/', include('docmanager.urls')),
+	url(r'^d/(?P<doc_id>\d+)?$', 'docmanager.views.serve', name='doc_serve'),
 	url(r'^admin/', include(admin.site.urls)),
 	url(r'^accounts/login/?$', 'django.contrib.auth.views.login', name="login"),
 	url(r'^accounts/logout/?$', 'django.contrib.auth.views.logout', {'next_page': '/'}, name="logout"),
