@@ -19,7 +19,7 @@ def serve(request, doc_id=None):
 
 @login_required
 def list(request):
-	documents = Document.objects.all()
+	documents = Document.objects.all().order_by('-last_modified')
 
 	return render_to_response('list.html', {
 		'documents': documents,
