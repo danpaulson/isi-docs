@@ -45,10 +45,9 @@ def add(request):
 def edit(request, doc_id=None):
 	doc = Document.objects.get(pk=doc_id)
 	if request.POST:
-		if doc.document:
+		if request.FILES and doc.document:
 				os.remove(doc.document.path)
 				doc.document.delete()
-				print 'deleted'
 		form = DocumentForm(instance=doc,data=request.POST,files=request.FILES)
 		if form.is_valid():
 			f = form.save(commit=False)
