@@ -4,7 +4,15 @@
 
 {% block extra_css %}{% endblock %}
 
-{% block extra_js %}{% endblock %}
+{% block extra_js %}
+<script type="text/javascript">
+$(document).ready(function(){
+	$('#id_document').change(function() {
+		$('#id_title').val($('#id_document').val().replace('C:\\fakepath\\',''));
+	});
+});
+</script>
+{% endblock %}
 
 {% block header %}
 	<h2>Add a new document</h2>
