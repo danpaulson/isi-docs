@@ -9,7 +9,8 @@
 $(document).ready(function(){
 	$('#id_document').change(function() {
 		var newname = $('#id_document').val().replace('C:\\fakepath\\','').replace('.pdf','').split(/[_]+/).pop();
-		$('#id_title').val(newname);
+		newname = newname.replace('.',' (')
+		$('#id_title').val(newname+')');
 	});
 });
 </script>
