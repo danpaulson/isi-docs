@@ -36,7 +36,8 @@ def add(request):
 			f.save()
 			return HttpResponseRedirect('/a/')
 	else:
-		form = DocumentForm()
+		lastdoc = Document.objects.all().order_by('-last_modified')[:1]
+		form = DocumentForm(initial={'category':lastdoc[0].category})
 	return render_to_response('add.html', {
 		'form': form,
 	}, context_instance=RequestContext(request))

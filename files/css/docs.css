@@ -26,3 +26,5 @@ table td { padding: 5px; }
 footer { margin: 10px 10px 0 10px; border-top: 1px solid #333; padding-top: 10px;}
 
 .center { text-align: center; }
+
+form #id_title { width: 400px; }
