@@ -54,7 +54,7 @@ def edit(request, doc_id=None):
 			f = form.save(commit=False)
 			f.last_edited_by = request.user
 			f.save()
-			return HttpResponseRedirect('/a/')
+			return HttpResponseRedirect('/a/add/')
 	else:
 		form = DocumentForm(instance=doc)
 	return render_to_response('add.html', {
