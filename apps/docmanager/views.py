@@ -34,7 +34,7 @@ def add(request):
 			f.creator = request.user
 			f.last_edited_by = request.user
 			f.save()
-			return HttpResponseRedirect('/a/')
+			return HttpResponseRedirect('/a/add/')
 	else:
 		lastdoc = Document.objects.all().order_by('-last_modified')[:1]
 		form = DocumentForm(initial={'category':lastdoc[0].category})
@@ -54,7 +54,7 @@ def edit(request, doc_id=None):
 			f = form.save(commit=False)
 			f.last_edited_by = request.user
 			f.save()
-			return HttpResponseRedirect('/a/add/')
+			return HttpResponseRedirect('/a/')
 	else:
 		form = DocumentForm(instance=doc)
 	return render_to_response('add.html', {
