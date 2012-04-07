@@ -7,10 +7,12 @@
 {% block extra_js %}
 <script type="text/javascript">
 $(document).ready(function(){
+	$('#id_document').focus();
 	$('#id_document').change(function() {
 		var newname = $('#id_document').val().replace('C:\\fakepath\\','').replace('.pdf','').split(/[_]+/).pop();
 		newname = newname.replace('.',' (')
 		$('#id_title').val(newname+')');
+		$('#id_title').focus();
 	});
 });
 </script>

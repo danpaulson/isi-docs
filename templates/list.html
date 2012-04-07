@@ -35,7 +35,7 @@ $(document).ready(function(){
 			<th>Edit</th>
 		</tr>
 	{% for d in documents %}
-		<tr>
+		<tr class="{% if forloop.counter|divisibleby:2 %}even{% else %}odd{% endif %}">
 			<td>{{d.title}}</td>
 			<td class="center">{{d.category.name}}</td>
 			<td><a href="/d/{{d.id}}">{{d.filename}}</a></td>
